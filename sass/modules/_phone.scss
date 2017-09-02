@@ -1,0 +1,44 @@
+.phone {
+	background: linear-gradient(to bottom left,#f3f8fb,#e5ebf2);
+	border-radius: 45px;
+	box-shadow: inset 4px -4px 12px rgba(145,160,180,.45), 0px 2px 6px rgba(50,50,93,.24), 0 10px 20px rgba(0,0,0,.12);
+	height: 616px;
+	margin: auto;
+	position: absolute;
+	width: 304px;
+}
+
+.phone::before,
+.phone::after {
+  content: "";
+  position: absolute;
+}
+
+.phone::before {
+  width: 56px;
+  height: 6px;
+  left: 126px;
+  top: 32px;
+  border-radius: 4px;
+  background: $bluegrey-100;
+}
+
+.phone:after {
+  width: 40px;
+  height: 40px;
+  left: 130px;
+  bottom: 16px;
+  border-radius: 35px;
+  background: $bluegrey-100;
+}
+
+.screen {
+  background: $bluegrey-900;
+  border-radius: 2px;
+  box-shadow: -1px 1px 6px rgba(170,183,204,.2);
+  width: 272px;
+  margin: auto;
+  top: 64px;
+  height: 480px;
+  position: relative;
+}

@@ -51,6 +51,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "normalize";
 
 /*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/variables";
+@import "base/logo";
+@import "base/texts";
+
+
+@import "modules/phone";
+
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
@@ -59,6 +69,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "layout/layouts";
 
 /*--------------------------------------------------------------
 # Forms

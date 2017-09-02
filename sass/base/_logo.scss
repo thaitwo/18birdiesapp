@@ -1,0 +1,22 @@
+.site-branding {
+	float: left;
+}
+
+.site-title {
+	// float: left;
+	line-height: 64px;
+	margin: 0;
+
+	a {
+		color: $white;
+		font-family: $font-primary;
+		font-size: $font-4x;
+		font-weight: 600;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+}
+
+.site-description {
+	display: none;
+}

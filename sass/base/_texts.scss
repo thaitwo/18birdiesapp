@@ -1,0 +1,22 @@
+.text-header {
+	font-family: $font-primary;
+	font-size: 40px;
+	font-weight: 500;
+}
+
+.text-body {
+	font-family: $font-primary;
+	font-size: 19px;
+	font-weight: 300;
+	line-height: 30px;
+	opacity: .9;
+	width: 500px;
+}
+
+.text-header,
+.text-body {
+
+	&.is-light {
+		color: $white;
+	}
+}
