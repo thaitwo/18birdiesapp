@@ -7,7 +7,43 @@
 	height: 600px;
 	background-position: center bottom;
 
+	a {
+		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		margin-right: 8px;
+	}
+
 	.phone {
 		right: 120px;
+	}
+}
+
+.features-nav {
+	border-top: 1px solid rgba($bluegrey-900, .1);
+	border-bottom: 1px solid rgba($bluegrey-900, .1);
+	display: block;
+	padding: 16px 0;
+	text-align: center;
+
+	li {
+		border-radius: 4px;
+		color: $bluegrey-200;
+		display: inline-block;
+		font-size: 15px;
+		line-height: 40px;
+		padding: 0 24px;
+		text-transform: uppercase;
+		transition: all .3s;
+
+		&.is-active {
+			background: $lightblue-400;
+			box-shadow: 0 1px 3px rgba($black, .08), 0 4px 6px rgba($black, .11);
+			color: $white;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }

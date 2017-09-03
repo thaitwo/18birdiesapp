@@ -20,6 +20,8 @@ $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
 	<?php
 		$hp_hero_bg_img = wp_get_attachment_image( $image, $size );
+		$button_link_left = get_field('hp_hero_button_left_link');
+		$button_link_right = get_field('hp_hero_button_right_link');
 
 		if( $image ) { ?>
 			<div class="hp-hero-bg" style="background: url( ../18birdies/wp-content/uploads/2017/08/hero-img.jpg ) center center scroll; background-size: cover">
@@ -27,6 +29,10 @@ $size = 'full'; // (thumbnail, medium, large, full or custom size)
 					<div class="l-left l-pad-top-10">
 						<h2 class="text-header is-light"><?php echo the_field('hp_hero_header') ?></h2>
 						<p class="text-body is-light"><?php echo the_field('hp_hero_body') ?></p>
+						<div>
+							<a class="button is-primary" href="<?php echo $button_link_left; ?>" target="_blank"><?php echo the_field('hp_hero_button_left') ?></a>
+							<a class="button is-primary" href="<?php echo $button_link_right; ?>" target="_blank"><?php echo the_field('hp_hero_button_right') ?></a>
+						</div>
 					</div>
 					<div class="phone">
 						<div class="screen"></div>
@@ -36,6 +42,51 @@ $size = 'full'; // (thumbnail, medium, large, full or custom size)
 	<?php
 		}
 	?>
+
+	<?php
+		$features_header = get_field('features_header');
+		$features_description = get_field('features_description');
+
+		if ($features_header) { ?>
+			<div class="container-lg features-section">
+				<div class="features-body">
+					<h2 class="text-subheader"><?php echo $features_header ?></h2>
+					<p><?php echo $features_description ?></p>
+				</div>
+				<div class="features-container">
+					<nav id="features-nav" class="features-nav">
+						<?php
+						if( have_rows('features') ):
+						    while ( have_rows('features') ) : the_row(); ?>
+						        <li id="<?php echo get_row_index(); ?>"><?php the_sub_field('feature_item'); ?></li>
+						    <?php
+						    endwhile;
+						else :
+						endif;
+						?>
+					</nav>
+
+					<div class="features-content">
+					<?php
+						if( have_rows('features') ):
+						    while ( have_rows('features') ) : the_row(); ?>
+							<div id="<?php echo get_row_index(); ?>" class="feature-item-container">
+								<h3><?php the_sub_field('feature_item'); ?></h3>
+								<p><?php the_sub_field('feature_item_description') ?></p>
+							</div>
+						<?php
+						    endwhile;
+						else :
+						endif;
+						?>
+					</div>
+				</div>
+			</div>
+	<?php
+		}
+	?>
+
+
 
 	<div class="entry-content">
 		<?php
