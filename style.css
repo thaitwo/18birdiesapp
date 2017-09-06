@@ -264,6 +264,7 @@ th {
     width: 460px; }
 
 .features-content {
+  height: 500px;
   padding: 80px;
   position: relative; }
   .features-content .feature-item-container {
@@ -278,6 +279,7 @@ th {
     margin-bottom: 24px; }
   .features-content p {
     font-size: 17px;
+    line-height: 28px;
     width: 400px; }
 
 .hp-hero-bg .text-header {
@@ -298,6 +300,17 @@ th {
   color: #ffffff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.24); }
 
+.full-bg {
+  height: 500px;
+  width: 100%; }
+
+.has-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+  position: relative; }
+
+.blue-bg {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); }
+
 .phone {
   background: linear-gradient(to bottom left, #f3f8fb, #e5ebf2);
   border-radius: 45px;
@@ -306,6 +319,14 @@ th {
   margin: auto;
   position: absolute;
   width: 304px; }
+  .phone.is-tilted {
+    transform: rotate(-8deg); }
+
+.features-content {
+  overflow: hidden; }
+  .features-content .phone {
+    right: 128px;
+    top: -56px; }
 
 .phone::before,
 .phone::after {
@@ -327,6 +348,19 @@ th {
   bottom: 16px;
   border-radius: 35px;
   background: #CFD8DC; }
+
+.screen-img {
+  border-radius: 2px;
+  box-shadow: -1px 1px 6px rgba(170, 183, 204, 0.2);
+  width: 272px;
+  margin: 0 16px;
+  display: none;
+  top: 64px;
+  height: 480px;
+  position: absolute; }
+
+.is-visible {
+  display: block; }
 
 .screen {
   background: #263238;

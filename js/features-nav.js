@@ -9,11 +9,14 @@
 	var $featuresItems = $featuresContainer.find('li');
 	var $featureContent = $('.feature-item-container');
 	var $con = $('.features-content');
+	var $featuresPhone = $('#features-phone');
+	var $featureScreens = $featuresPhone.find('.screen-img');
 
 	// Make first item active
 	$($featuresItems[0]).addClass('is-active');
 
 	$($featureContent[0]).addClass('is-visible');
+	$($featureScreens[0]).addClass('is-visible');
 
 	function toggleActive() {
 		$featuresContainer.on('click', 'li', function(event) {
@@ -32,8 +35,12 @@
 
 	function activateSelection(id) {
 		$featureContent.removeClass('is-visible');
-		var yo = $con.find('div#' + id);
+		var yo = $con.find('div#features-' + id);
 		yo.addClass('is-visible');
+
+		$featureScreens.removeClass('is-visible');
+		var screen = $featuresPhone.find('div#features-phone-screen-' + id);
+		screen.addClass('is-visible');
 	}
 
 	toggleActive();

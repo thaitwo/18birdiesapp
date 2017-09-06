@@ -24,7 +24,7 @@ $size = 'full'; // (thumbnail, medium, large, full or custom size)
 		$button_link_right = get_field('hp_hero_button_right_link');
 
 		if( $image ) { ?>
-			<div class="hp-hero-bg" style="background: url( ../18birdies/wp-content/uploads/2017/08/hero-img.jpg ) center center scroll; background-size: cover">
+			<div class="hp-hero-bg" style="background: url( ../18birdies/wp-content/uploads/2017/08/hero-img.jpg ) center center; background-size: cover">
 				<div class="container-lg l-pad-top-7">
 					<div class="l-left l-pad-top-10">
 						<h2 class="text-header is-light"><?php echo the_field('hp_hero_header') ?></h2>
@@ -48,40 +48,55 @@ $size = 'full'; // (thumbnail, medium, large, full or custom size)
 		$features_description = get_field('features_description');
 
 		if ($features_header) { ?>
-			<div class="container-lg features-section">
-				<div class="features-body">
-					<h2 class="text-subheader"><?php echo $features_header ?></h2>
-					<p><?php echo $features_description ?></p>
-				</div>
-				<div class="features-container">
-					<nav id="features-nav" class="features-nav">
-						<?php
-						if( have_rows('features') ):
-						    while ( have_rows('features') ) : the_row(); ?>
-						        <li id="<?php echo get_row_index(); ?>"><?php the_sub_field('feature_item'); ?></li>
-						    <?php
-						    endwhile;
-						else :
-						endif;
-						?>
-					</nav>
+			<div class="has-shadow">
+				<div class="container-lg features-section">
+					<div class="features-body">
+						<h2 class="text-subheader"><?php echo $features_header ?></h2>
+						<p><?php echo $features_description ?></p>
+					</div>
+					<div class="features-container">
+						<nav id="features-nav" class="features-nav">
+							<?php
+							if( have_rows('features') ):
+							    while ( have_rows('features') ) : the_row(); ?>
+							        <li id="<?php echo get_row_index(); ?>"><?php the_sub_field('feature_item'); ?></li>
+							    <?php
+							    endwhile;
+							else :
+							endif;
+							?>
+						</nav>
 
-					<div class="features-content">
-					<?php
-						if( have_rows('features') ):
-						    while ( have_rows('features') ) : the_row(); ?>
-							<div id="<?php echo get_row_index(); ?>" class="feature-item-container">
-								<h3><?php the_sub_field('feature_item'); ?></h3>
-								<p><?php the_sub_field('feature_item_description') ?></p>
+						<div class="features-content">
+							<?php
+							if( have_rows('features') ):
+							    while ( have_rows('features') ) : the_row(); ?>
+								<div id="features-<?php echo get_row_index(); ?>" class="feature-item-container">
+									<h3><?php the_sub_field('feature_item'); ?></h3>
+									<p><?php the_sub_field('feature_item_description') ?></p>
+								</div>
+							<?php
+							    endwhile;
+							else :
+							endif;
+							?>
+							<div id="features-phone" class="phone is-tilted">
+								<?php
+								if( have_rows('features') ):
+								    while ( have_rows('features') ) : the_row(); ?>
+									<div id="features-phone-screen-<?php echo get_row_index(); ?>" class="screen-img" style="background: url(<?php the_sub_field('feature_item_image') ?>) no-repeat; background-size: cover;">
+									</div>
+								<?php
+								    endwhile;
+								else :
+								endif;
+								?>
 							</div>
-						<?php
-						    endwhile;
-						else :
-						endif;
-						?>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class="full-bg blue-bg"></div>
 	<?php
 		}
 	?>

@@ -6,6 +6,19 @@
 	margin: auto;
 	position: absolute;
 	width: 304px;
+
+  &.is-tilted {
+    transform: rotate(-8deg);
+  }
+}
+
+.features-content {
+  overflow: hidden;
+
+   .phone {
+    right: 128px;
+    top: -56px;
+   }
 }
 
 .phone::before,
@@ -30,6 +43,21 @@
   bottom: 16px;
   border-radius: 35px;
   background: $bluegrey-100;
+}
+
+.screen-img {
+  border-radius: 2px;
+  box-shadow: -1px 1px 6px rgba(170,183,204,.2);
+  width: 272px;
+  margin: 0 16px;
+  display: none;
+  top: 64px;
+  height: 480px;
+  position: absolute;
+}
+
+.is-visible {
+  display: block;
 }
 
 .screen {
